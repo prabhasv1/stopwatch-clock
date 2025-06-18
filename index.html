@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch & Clock App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <button id="theme-toggle">Toggle Dark Mode</button>
+
+  <div class="container">
+    <h1>🕒 Stopwatch & Clock</h1>
+
+    <div class="clock">
+      <h2>Current Time</h2>
+      <div id="current-time">--:--:--</div>
+    </div>
+
+    <div class="stopwatch">
+      <h2>Stopwatch</h2>
+      <div id="stopwatch">00:00:00</div>
+
+      <!-- Circular Progress -->
+      <svg width="120" height="120">
+        <circle cx="60" cy="60" r="50" stroke="#007acc" stroke-width="8" fill="none"
+                stroke-dasharray="314" stroke-dashoffset="314" id="progress-ring"/>
+      </svg>
+
+      <div class="controls">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+        <button onclick="lapStopwatch()">Lap</button>
+      </div>
+
+      <ul id="laps"></ul>
+      <button onclick="downloadLaps()">Download Laps</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
